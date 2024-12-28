@@ -1,0 +1,132 @@
+{
+	"explainVersion" : "1",
+	"queryPlanner" : {
+		"namespace" : "Practica_3.geonames",
+		"indexFilterSet" : false,
+		"parsedQuery" : {
+			"population" : {
+				"$gt" : 5000000
+			}
+		},
+		"queryHash" : "CDB8A071",
+		"planCacheKey" : "A8FCE733",
+		"maxIndexedOrSolutionsReached" : false,
+		"maxIndexedAndSolutionsReached" : false,
+		"maxScansToExplodeReached" : false,
+		"winningPlan" : {
+			"stage" : "FETCH",
+			"inputStage" : {
+				"stage" : "IXSCAN",
+				"keyPattern" : {
+					"population" : 1
+				},
+				"indexName" : "population_1",
+				"isMultiKey" : false,
+				"multiKeyPaths" : {
+					"population" : [ ]
+				},
+				"isUnique" : false,
+				"isSparse" : false,
+				"isPartial" : false,
+				"indexVersion" : 2,
+				"direction" : "forward",
+				"indexBounds" : {
+					"population" : [ "(5000000, inf.0]" ]
+				}
+			}
+		},
+		"rejectedPlans" : [ ]
+	},
+	"executionStats" : {
+		"executionSuccess" : true,
+		"nReturned" : 2,
+		"executionTimeMillis" : 0,
+		"totalKeysExamined" : 2,
+		"totalDocsExamined" : 2,
+		"executionStages" : {
+			"stage" : "FETCH",
+			"nReturned" : 2,
+			"executionTimeMillisEstimate" : 0,
+			"works" : 3,
+			"advanced" : 2,
+			"needTime" : 0,
+			"needYield" : 0,
+			"saveState" : 0,
+			"restoreState" : 0,
+			"isEOF" : 1,
+			"docsExamined" : 2,
+			"alreadyHasObj" : 0,
+			"inputStage" : {
+				"stage" : "IXSCAN",
+				"nReturned" : 2,
+				"executionTimeMillisEstimate" : 0,
+				"works" : 3,
+				"advanced" : 2,
+				"needTime" : 0,
+				"needYield" : 0,
+				"saveState" : 0,
+				"restoreState" : 0,
+				"isEOF" : 1,
+				"keyPattern" : {
+					"population" : 1
+				},
+				"indexName" : "population_1",
+				"isMultiKey" : false,
+				"multiKeyPaths" : {
+					"population" : [ ]
+				},
+				"isUnique" : false,
+				"isSparse" : false,
+				"isPartial" : false,
+				"indexVersion" : 2,
+				"direction" : "forward",
+				"indexBounds" : {
+					"population" : [ "(5000000, inf.0]" ]
+				},
+				"keysExamined" : 2,
+				"seeks" : 1,
+				"dupsTested" : 0,
+				"dupsDropped" : 0
+			}
+		}
+	},
+	"command" : {
+		"find" : "geonames",
+		"filter" : {
+			"population" : {
+				"$gt" : 5000000
+			}
+		},
+		"batchSize" : 1000,
+		"projection" : {
+			
+		},
+		"$db" : "Practica_3"
+	},
+	"serverInfo" : {
+		"host" : "main.grup15.gabd",
+		"port" : 37017,
+		"version" : "7.0.14",
+		"gitVersion" : "ce59cfc6a3c5e5c067dca0d30697edd68d4f5188"
+	},
+	"serverParameters" : {
+		"internalQueryFacetBufferSizeBytes" : 104857600,
+		"internalQueryFacetMaxOutputDocSizeBytes" : 104857600,
+		"internalLookupStageIntermediateDocumentMaxSizeBytes" : 104857600,
+		"internalDocumentSourceGroupMaxMemoryBytes" : 104857600,
+		"internalQueryMaxBlockingSortMemoryUsageBytes" : 104857600,
+		"internalQueryProhibitBlockingMergeOnMongoS" : 0,
+		"internalQueryMaxAddToSetBytes" : 104857600,
+		"internalDocumentSourceSetWindowFieldsMaxMemoryBytes" : 104857600,
+		"internalQueryFrameworkControl" : "trySbeRestricted"
+	},
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp({ t: 1735301546, i: 1 }),
+		"signature" : {
+			"hash" : BinData(0,"fD2xyUv6TlMlRYvOYNxuGb2+hcw="),
+			"keyId" : Long("7452774268749742081")
+		}
+	},
+	"operationTime" : Timestamp({ t: 1735301541, i: 1 })
+}

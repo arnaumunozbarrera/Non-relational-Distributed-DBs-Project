@@ -1,0 +1,92 @@
+{
+	"explainVersion" : "1",
+	"queryPlanner" : {
+		"namespace" : "Practica_3.geonames",
+		"indexFilterSet" : false,
+		"parsedQuery" : {
+			"population" : {
+				"$gt" : 5000000
+			}
+		},
+		"queryHash" : "CDB8A071",
+		"planCacheKey" : "CDB8A071",
+		"maxIndexedOrSolutionsReached" : false,
+		"maxIndexedAndSolutionsReached" : false,
+		"maxScansToExplodeReached" : false,
+		"winningPlan" : {
+			"stage" : "COLLSCAN",
+			"filter" : {
+				"population" : {
+					"$gt" : 5000000
+				}
+			},
+			"direction" : "forward"
+		},
+		"rejectedPlans" : [ ]
+	},
+	"executionStats" : {
+		"executionSuccess" : true,
+		"nReturned" : 2,
+		"executionTimeMillis" : 12719,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 9227211,
+		"executionStages" : {
+			"stage" : "COLLSCAN",
+			"filter" : {
+				"population" : {
+					"$gt" : 5000000
+				}
+			},
+			"nReturned" : 2,
+			"executionTimeMillisEstimate" : 1820,
+			"works" : 9227212,
+			"advanced" : 2,
+			"needTime" : 9227209,
+			"needYield" : 0,
+			"saveState" : 9227,
+			"restoreState" : 9227,
+			"isEOF" : 1,
+			"direction" : "forward",
+			"docsExamined" : 9227211
+		}
+	},
+	"command" : {
+		"find" : "geonames",
+		"filter" : {
+			"population" : {
+				"$gt" : 5000000
+			}
+		},
+		"batchSize" : 1000,
+		"projection" : {
+			
+		},
+		"$db" : "Practica_3"
+	},
+	"serverInfo" : {
+		"host" : "main.grup15.gabd",
+		"port" : 37017,
+		"version" : "7.0.14",
+		"gitVersion" : "ce59cfc6a3c5e5c067dca0d30697edd68d4f5188"
+	},
+	"serverParameters" : {
+		"internalQueryFacetBufferSizeBytes" : 104857600,
+		"internalQueryFacetMaxOutputDocSizeBytes" : 104857600,
+		"internalLookupStageIntermediateDocumentMaxSizeBytes" : 104857600,
+		"internalDocumentSourceGroupMaxMemoryBytes" : 104857600,
+		"internalQueryMaxBlockingSortMemoryUsageBytes" : 104857600,
+		"internalQueryProhibitBlockingMergeOnMongoS" : 0,
+		"internalQueryMaxAddToSetBytes" : 104857600,
+		"internalDocumentSourceSetWindowFieldsMaxMemoryBytes" : 104857600,
+		"internalQueryFrameworkControl" : "trySbeRestricted"
+	},
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp({ t: 1735301736, i: 1 }),
+		"signature" : {
+			"hash" : BinData(0,"czIuPAJAYbNRhdq8o3BSJeLGTGw="),
+			"keyId" : Long("7452774268749742081")
+		}
+	},
+	"operationTime" : Timestamp({ t: 1735301731, i: 1 })
+}
